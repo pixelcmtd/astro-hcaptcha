@@ -1,0 +1,24 @@
+{
+  "name": "astro-hcaptcha",
+  "version": "0.1.0",
+  "description": "An hCaptcha component for Astro",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelcmtd/astro-hcaptcha.git"
+  },
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "devDependencies": {
+    "astro": "^4.0.0"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0-beta.0"
+  },
+  "license": "MIT"
+}

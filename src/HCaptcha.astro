@@ -1,0 +1,31 @@
+---
+export interface Props {
+    sitekey: string;
+
+    render?: "explicit" | "onload";
+    hl?: string;
+    recaptchacompat?: "on" | "off";
+
+    theme?: "light" | "dark";
+    size?: "normal" | "compact";
+}
+
+const { sitekey, render, hl, recaptchacompat, theme, size } = Astro.props;
+
+const api = new URL("https://js.hcaptcha.com/1/api.js");
+const addParam = (n: string, v?: string) => v && api.searchParams.append(n, v);
+
+addParam("render", render);
+addParam("hl", hl);
+addParam("recaptchacompat", recaptchacompat);
+---
+
+<script src={api.toString()} async defer></script>
+
+<div
+    class="h-captcha"
+    data-sitekey={sitekey}
+    data-theme={theme}
+    data-size={size}
+>
+</div>
