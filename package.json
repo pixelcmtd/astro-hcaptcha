@@ -1,6 +1,6 @@
 {
   "name": "astro-hcaptcha",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An hCaptcha component for Astro",
   "type": "module",
   "repository": {
@@ -15,10 +15,10 @@
     "index.ts"
   ],
   "devDependencies": {
-    "astro": "^4.0.0"
+    "astro": "^5.0.0"
   },
   "peerDependencies": {
-    "astro": "^4.0.0-beta.0"
+    "astro": "^5.0.0-beta.0"
   },
   "license": "MIT"
 }
