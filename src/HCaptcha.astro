@@ -8,9 +8,29 @@ export interface Props {
 
     theme?: "light" | "dark";
     size?: "normal" | "compact";
+    tabindex?: number;
+    callback?: {
+        success?: string;
+        expired?: string;
+        challengeExpired?: string;
+        open?: string;
+        close?: string;
+        error?: string;
+    };
+    orientation?: "portrait" | "landscape";
 }
 
-const { sitekey, render, hl, recaptchacompat, theme, size } = Astro.props;
+const {
+    sitekey,
+    render,
+    hl,
+    recaptchacompat,
+    theme,
+    size,
+    tabindex,
+    callback,
+    orientation,
+} = Astro.props;
 
 const api = new URL("https://js.hcaptcha.com/1/api.js");
 const addParam = (n: string, v?: string) => v && api.searchParams.append(n, v);
@@ -27,5 +47,13 @@ addParam("recaptchacompat", recaptchacompat);
     data-sitekey={sitekey}
     data-theme={theme}
     data-size={size}
+    data-tabindex={tabindex}
+    data-callback={callback?.success}
+    data-expired-callback={callback?.expired}
+    data-chalexpired-callback={callback?.challengeExpired}
+    data-open-callback={callback?.open}
+    data-close-callback={callback?.close}
+    data-error-callback={callback?.error}
+    data-orientation={orientation}
 >
 </div>
